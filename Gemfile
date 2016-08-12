@@ -61,3 +61,39 @@ group :development, :test do # 也包含 test 是為了讓寫 test case 時也�
   gem "rspec-rails"
   gem "factory_girl_rails"
 end
+
+# config file
+gem 'settingslogic'
+
+# User account
+gem 'devise'
+gem 'devise-i18n'
+
+# oauth
+gem 'omniauth'
+gem 'omniauth-facebook'
+
+# i18n
+gem "rails-i18n"
+
+# Use for google analytics
+gem 'google-analytics-rails'
+
+# auto page
+gem 'will_paginate', '~> 3.0'
+gem 'will_paginate-bootstrap'
+
+#
+gem 'active_hash'
+gem 'decent_exposure', '3.0.0.beta2'
+
+# send to js
+gem "i18n-js", ">= 3.0.0.rc13"
+
+# Style
+gem 'slim'
+gem 'slim-rails'
+gem 'font-awesome-rails'
+gem 'noty-rails'
+gem 'sweetalert2'
+gem 'react-rails'
