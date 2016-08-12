@@ -40,3 +40,8 @@ bower.json
 
 # Ignore Byebug command history file.
 .byebug_history
+
+# config setting
+/config/*.yml
+/config/deploy.rb
+/public/uploads/*
