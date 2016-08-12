@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.0.0'
+gem 'rails', '~> 5.0.0.1'
 # Use mysql as the database for Active Record
 gem 'mysql2', '>= 0.3.18', '< 0.5'
 # Use Puma as the app server
@@ -46,3 +46,18 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# debug
+gem "pry"
+gem "pry-rails"
+gem "awesome_print", :require => false
+
+group :development, :test do # 也包含 test 是為了讓寫 test case 時也可以 debug
+  # gem "pry-plus"
+  gem "hirb", :require => false
+  gem "hirb-unicode", :require => false
+
+  # RSpec
+  gem "rspec-rails"
+  gem "factory_girl_rails"
+end
