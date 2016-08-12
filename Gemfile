@@ -93,6 +93,7 @@ gem "i18n-js", ">= 3.0.0.rc13"
 # Style
 gem 'slim'
 gem 'slim-rails'
+gem 'bootstrap-sass'
 gem 'font-awesome-rails'
 gem 'noty-rails'
 gem 'sweetalert2'
