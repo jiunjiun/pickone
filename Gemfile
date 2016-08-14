@@ -90,6 +90,9 @@ gem 'decent_exposure', '3.0.0.beta2'
 # send to js
 gem "i18n-js", ">= 3.0.0.rc13"
 
+# form
+gem 'simple_form'
+
 # Style
 gem 'slim'
 gem 'slim-rails'
