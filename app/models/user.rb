@@ -7,6 +7,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :omniauthable, :omniauth_providers => [:facebook]
 
   has_one :identity
+  has_many :events
+  has_many :votes
 
   TEMP_EMAIL_PREFIX = 'change@me'
   TEMP_EMAIL_REGEX = /\Achange@me/

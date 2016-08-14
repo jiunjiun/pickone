@@ -50,9 +50,14 @@ zh-TW:
   recaptcha:
     errors:
       verification_failed: '請重新驗證'
+
   activerecord:
     errors:
       models:
+        event:
+          attributes:
+            items:
+              blank: '至少增加兩個投票項目，且不能為空'
 
   time:
     formats:
@@ -63,26 +68,23 @@ zh-TW:
 
   simple_form:
     labels:
-      adcase:
-        name:           '專案名稱'
-        bonus:          '獎金'
-        setup_date:     '安裝日期'
-        to:             'to'
-        start_at:       '開始時間'
-        end_at:         '截止日期'
-        count:          '廣告總數量'
-        dealers:        '車行資訊'
-        setuped_count:  '已安裝數'
-        case_dealers:
-          dealer_id:    '車行'
-          amount:       '廣告數量'
+      event:
+        title:        '名稱'
+        desc:         '描述'
+        is_secret:    '是否記名'
+        is_duplicate: '是否重複選擇'
+        item:         '投票項目'
+        items:
+          name:       '項目'
+          link:       '連結'
+
     placeholders:
-      adcase:
-        name:           '專案名稱'
-        bonus:          ''
-        setup_start_at: '開始時間'
-        setup_end_at:   '結束時間'
-        start_at:       'yyyy/mm/dd'
-        end_at:         'yyyy/mm/dd'
-        dealers:        '請選擇車行'
-        dealer_amount:  '廣告數量'
+      event:
+        title:        '名稱'
+        desc:         '描述'
+        is_secret:    '記名'
+        is_duplicate: '重複選擇'
+        item:         '投票項目'
+        items:
+          name:       '項目'
+          link:       '連結(http://www.google.com)'

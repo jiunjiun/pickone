@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   namespace :admin do
     root 'dashboard#index'
+
+    resources :events
   end
 
   root 'home#index'

@@ -3,9 +3,10 @@ class CreateEvents < ActiveRecord::Migration[5.0]
     create_table :events do |t|
       t.string :title
       t.string :desc
-      t.boolean :is_secret
-      t.boolean :is_duplicate
-      t.date :over_at
+      t.boolean :is_secret,    default: false, commit: '不記名'
+      t.boolean :is_duplicate, default: false, commit: '重複投票'
+      t.date :over_at,         commit: '截止時間'
+      t.references :user, foreign_key: true
 
       t.timestamps
     end

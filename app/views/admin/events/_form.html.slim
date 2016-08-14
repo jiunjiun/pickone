@@ -1,0 +1,32 @@
+#event_form
+  .panel.colourable
+    .panel-body
+      == simple_form_for([:admin, event]) do |f|
+        == f.input :title, required: true
+        == f.input :desc
+        .form-group
+          .col-md-2
+            .checkbox
+              == f.label :is_secret do
+                == f.check_box :is_secret, class: 'px'
+                span.lbl= t('simple_form.labels.event.is_secret')
+          .col-md-2
+            .checkbox
+              == f.label :is_duplicate do
+                == f.check_box :is_duplicate, class: 'px'
+                span.lbl= t('simple_form.labels.event.is_duplicate')
+        / == f.input :over_at, required: true
+
+        - if event.errors[:items].present? or event.errors['items.name'].present?
+          .note.note-danger
+            = t('simple_form.labels.event.item')
+            | :&nbsp;
+            = event.errors[:items].first || event.errors['items.name'].first
+        == react_component('EventItems', items: items)
+
+        br/
+        .row
+          .col-md-12
+            == f.button :submit, class: 'btn-success btn-flat'
+            | &nbsp;&nbsp;
+            == link_to t('helpers.back'), admin_events_path, class: 'btn btn-default btn-flat'
