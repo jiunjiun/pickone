@@ -3,6 +3,7 @@ class CreateEvents < ActiveRecord::Migration[5.0]
     create_table :events do |t|
       t.string :title
       t.string :desc
+      t.string :code, default: SecureRandom.hex(4), commit: '不記名'
       t.boolean :is_secret,    default: false, commit: '不記名'
       t.boolean :is_duplicate, default: false, commit: '重複投票'
       t.date :over_at,         commit: '截止時間'

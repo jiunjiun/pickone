@@ -15,12 +15,13 @@ ActiveRecord::Schema.define(version: 20160813052137) do
   create_table "events", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "title"
     t.string   "desc"
+    t.string   "code",         default: "920d8d9a"
     t.boolean  "is_secret",    default: false
     t.boolean  "is_duplicate", default: false
     t.date     "over_at"
     t.integer  "user_id"
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
     t.index ["user_id"], name: "index_events_on_user_id", using: :btree
   end
 
@@ -63,17 +64,17 @@ ActiveRecord::Schema.define(version: 20160813052137) do
   end
 
   create_table "votes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "event_id"
+    t.integer  "item_id"
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["event_id"], name: "index_votes_on_event_id", using: :btree
+    t.index ["item_id"], name: "index_votes_on_item_id", using: :btree
     t.index ["user_id"], name: "index_votes_on_user_id", using: :btree
   end
 
   add_foreign_key "events", "users"
   add_foreign_key "identities", "users"
   add_foreign_key "items", "events"
-  add_foreign_key "votes", "events"
+  add_foreign_key "votes", "items"
   add_foreign_key "votes", "users"
 end
