@@ -9,7 +9,7 @@ zh-TW:
   backend:      '後台'
   back_fontend: '回前台'
 
-  adcase:  '專案管理'
+  event:  '投票'
 
   helpers:
     you_are_here     : '目前在:'
@@ -47,9 +47,12 @@ zh-TW:
       create: "新增"
       update: "更新"
 
-  recaptcha:
-    errors:
-      verification_failed: '請重新驗證'
+  events:
+    link: '投票連結'
+    clipboard: '複製到剪貼簿'
+    clipboarded: '已複製到剪貼簿'
+    items: '投票項目'
+    role: '投票條件'
 
   activerecord:
     errors:
@@ -71,8 +74,8 @@ zh-TW:
       event:
         title:        '名稱'
         desc:         '描述'
-        is_secret:    '是否記名'
-        is_duplicate: '是否重複選擇'
+        is_secret:    '記名'
+        is_duplicate: '複選'
         item:         '投票項目'
         items:
           name:       '項目'

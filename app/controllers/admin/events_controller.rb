@@ -17,7 +17,6 @@ class Admin::EventsController < AdminController
     if event.save
       redirect_to admin_event_path(event)
     else
-      Rails.logger.debug { " -- event: #{event.errors.to_json}" }
       render :new
     end
   end
