@@ -17,11 +17,11 @@
   /! Default panel contents
   .panel-heading
     span.panel-title= t('events.items')
-    .panel-heading-controls
-      button.btn.btn-xs.btn-success.btn-outline
-        span.fa.fa-refresh
-        | &nbsp;&nbsp;Refresh
-
+    / .panel-heading-controls
+    /   button.btn.btn-xs.btn-success.btn-outline
+    /     span.fa.fa-refresh
+    /     | &nbsp;&nbsp;
+    /     = t('helpers.refresh')
   .panel-body
     /! Table
     table.table
@@ -36,11 +36,17 @@
             td
               - if event.top_item == item.id
                 i.fa.fa-star aria-hidden="true"
-                | &nbsp;&nbsp;
+                | &nbsp;&nbsp;&nbsp;
               = item.votes.count
             td= item.name
             td= link_to item.link, item.link
 
+.panel
+  .panel-heading
+    span.panel-title 圖表
+  .panel-body
+    .graph-container
+      canvas#myChart
 
 
 / event role
@@ -66,3 +72,5 @@
                     i.fa.fa-check aria-hidden="true"
                     | &nbsp;
                     = t('simple_form.labels.event.is_duplicate')
+
+script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.1/Chart.min.js"

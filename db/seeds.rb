@@ -3,5 +3,22 @@
 #
 # Examples:
 #
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+# Create Event
+event = Event.create(
+  user_id: 1, title: 'aaa', desc: 'desc',
+  items_attributes: [
+    {name: '谷哥店', link: 'https://www.google.com.tw/'},
+    {name: '雅虎店', link: 'https://tw.yahoo.com/'},
+    {name: '蘋果店', link: 'http://www.apple.com/tw/'},
+  ]
+)
+
+# Create Vote
+event.items.first.votes.create user_id: 1
+
+event.items[1].votes.create user_id: 1
+event.items[1].votes.create user_id: 1
+event.items[1].votes.create user_id: 1
+
+event.items.last.votes.create user_id: 1
+event.items.last.votes.create user_id: 1
