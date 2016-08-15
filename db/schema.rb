@@ -15,13 +15,13 @@ ActiveRecord::Schema.define(version: 20160813052137) do
   create_table "events", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "title"
     t.string   "desc"
-    t.string   "code",         default: "920d8d9a"
+    t.string   "code"
     t.boolean  "is_secret",    default: false
     t.boolean  "is_duplicate", default: false
     t.date     "over_at"
     t.integer  "user_id"
-    t.datetime "created_at",                        null: false
-    t.datetime "updated_at",                        null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
     t.index ["user_id"], name: "index_events_on_user_id", using: :btree
   end
 

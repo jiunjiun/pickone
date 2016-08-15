@@ -37,6 +37,7 @@ zh-TW:
     or_click_to_pick_manually: '或點擊上傳'
     back_page        : '上一頁'
     continue         : '繼續'
+    refresh          : '更新'
 
     successfully_created : '新增成功' # Your profile was successfully created.
     successfully_updated : '更新成功' # Your profile was successfully updated.

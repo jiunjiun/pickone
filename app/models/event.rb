@@ -10,6 +10,7 @@ class Event < ApplicationRecord
 
   validate :validate_items
 
+  before_create :generate_code
 
   def top_item
     vote_sort.keys.first
@@ -22,5 +23,9 @@ class Event < ApplicationRecord
   private
   def validate_items
     errors.add(:items, I18n.t('activerecord.errors.models.event.attributes.items.blank')) if items.size < 2
+  end
+
+  def generate_code
+    self.code = SecureRandom.hex(4)
   end
 end
