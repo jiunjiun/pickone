@@ -54,6 +54,10 @@ zh-TW:
     clipboarded: '已複製到剪貼簿'
     items: '投票項目'
     role: '投票條件'
+    count: '票數'
+    item: '項目'
+    link: '連結'
+    chart: '圖表'
 
   activerecord:
     errors:

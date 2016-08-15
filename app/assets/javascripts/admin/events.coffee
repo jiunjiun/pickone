@@ -20,7 +20,7 @@ $ ->
       data:
         labels: data.chart.labels
         datasets: [
-          label: '票數'
+          label: I18n.t('events.count')
           data: data.chart.data
           backgroundColor: [
             '#EF5350'

@@ -27,9 +27,9 @@
     table.table
       thead
         tr
-          th.text-center 票數
-          th.text-center 項目
-          th.text-center 連結
+          th.text-center= t('events.count')
+          th.text-center= t('events.item')
+          th.text-center= t('events.link')
       tbody
         - items.each do |item|
           tr.text-center
@@ -43,7 +43,7 @@
 
 .panel
   .panel-heading
-    span.panel-title 圖表
+    span.panel-title= t('events.chart')
   .panel-body
     .graph-container
       canvas#myChart
