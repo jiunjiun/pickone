@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'events/show'
+
   get 'users/finish_signup'
 
   devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
@@ -12,6 +14,6 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
-  get 'events/:code', to: 'event#show', as: :event
+  get 'events/:code', to: 'events#show', as: :event
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

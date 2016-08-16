@@ -13,6 +13,28 @@
         button.btn.btn-clipboard type="button" data-clipboard-target="#event_link" data-original-title=t('events.clipboard') data-placement="top" data-toggle="tooltip"
           i.fa.fa-clipboard aria-hidden="true"
 
+/ event role
+- if has_role?
+  #accordion.panel-group
+    .panel
+      .panel-heading
+        a.accordion-toggle.collapsed data-parent="#accordion" data-toggle="collapse" href="#event_role"
+          = t('events.role')
+      /! / .panel-heading
+      #event_role.panel-collapse.collapse
+        .panel-body
+          ul.list-group
+            - if event.is_secret
+              li.list-group-item
+                i.fa.fa-check aria-hidden="true"
+                | &nbsp;
+                = t('simple_form.labels.event.is_secret')
+            - if event.is_duplicate
+              li.list-group-item
+                i.fa.fa-check aria-hidden="true"
+                | &nbsp;
+                = t('simple_form.labels.event.is_duplicate')
+
 .panel.colourable
   /! Default panel contents
   .panel-heading
@@ -47,30 +69,5 @@
   .panel-body
     .graph-container
       canvas#myChart
-
-
-/ event role
-- if has_role?
-  .row
-    .col-sm-12
-      #accordion.panel-group
-        .panel
-          .panel-heading
-            a.accordion-toggle.collapsed data-parent="#accordion" data-toggle="collapse" href="#event_role"
-              = t('events.role')
-          /! / .panel-heading
-          #event_role.panel-collapse.collapse
-            .panel-body
-              ul.list-group
-                - if event.is_secret
-                  li.list-group-item
-                    i.fa.fa-check aria-hidden="true"
-                    | &nbsp;
-                    = t('simple_form.labels.event.is_secret')
-                - if event.is_duplicate
-                  li.list-group-item
-                    i.fa.fa-check aria-hidden="true"
-                    | &nbsp;
-                    = t('simple_form.labels.event.is_duplicate')
 
 script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.1/Chart.min.js"
