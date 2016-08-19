@@ -4,28 +4,35 @@
 <html lang="en">
   <!--<![endif]-->
 
-  <head>
-    <meta charset="utf-8">
-    <title>Event</title>
-    <meta name="description" content="">
-    <meta name="author" content="jiunjiun">
+<head>
+  <meta charset="utf-8">
+  <title>Event</title>
+  <meta name="description" content="">
+  <meta name="author" content="jiunjiun">
 
-    <!-- Mobile Meta -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Mobile Meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Favicon -->
-    <!-- <link rel="shortcut icon" href="images/favicon.ico"> -->
+  <!-- Favicon -->
+  <!-- <link rel="shortcut icon" href="images/favicon.ico"> -->
 
-    <!-- Web Fonts -->
-    <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,500italic,700,700italic' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Raleway:700,400,300' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=PT+Serif' rel='stylesheet' type='text/css'>
+  <!-- Web Fonts -->
+  <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,500italic,700,700italic' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Raleway:700,400,300' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=PT+Serif' rel='stylesheet' type='text/css'>
 
-    <%= stylesheet_link_tag 'events', media: 'all', 'data-turbolinks-track': 'reload' %>
-  </head>
-  <body>
-    <%= yield %>
-    <%= javascript_include_tag 'events', 'data-turbolinks-track': 'reload' %>
-  </body>
+  <%= stylesheet_link_tag 'events', media: 'all', 'data-turbolinks-track': 'reload' %>
+</head>
+<body>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLFTRo7Saflr9H9WgalC3qJOzUHY9_r5Tq" frameborder="0" allowfullscreen></iframe>
+
+
+
+  <!-- Get jQuery from Google CDN -->
+  <!--[if !IE]> -->
+  <script type="text/javascript"> window.jQuery || document.write('<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js">'+"<"+"/script>"); </script>
+  <!-- <![endif]-->
+  <%= javascript_include_tag 'events', 'data-turbolinks-track': 'reload' %>
+</body>
 </html>

@@ -11,20 +11,20 @@
  Plugins
  *= require TheProject/plugins/magnific-popup/magnific-popup.css
  *= require TheProject/plugins/rs-plugin/css/settings.css
- *= require TheProject/css/animations.css
+ *= require TheProject/animations.css
  *= require TheProject/plugins/owl-carousel/owl.carousel.css
  *= require TheProject/plugins/owl-carousel/owl.transitions.css
  *= require TheProject/plugins/hover/hover-min.css
  *= require TheProject/plugins/morphext/morphext.css
 
  The Project core CSS file
- *= require TheProject/css/style.css
+ *= require TheProject/style.css
 
  Color Scheme (In order to change the color scheme, replace the blue.css with the color scheme that you prefer)
- *= require TheProject/css/skins/light_blue.css
+ *= require TheProject/skins/light_blue.css
 
  Custom css
- *= require TheProject/css/custom.css
+ *= require TheProject/custom.css
  *
  */
 
