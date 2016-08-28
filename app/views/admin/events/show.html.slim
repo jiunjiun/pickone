@@ -29,11 +29,11 @@
                 i.fa.fa-check aria-hidden="true"
                 | &nbsp;
                 = t('simple_form.labels.event.is_secret')
-            - if event.is_duplicate
+            - if event.is_multi_select
               li.list-group-item
                 i.fa.fa-check aria-hidden="true"
                 | &nbsp;
-                = t('simple_form.labels.event.is_duplicate')
+                = t('simple_form.labels.event.is_multi_select')
 
 .panel.colourable
   /! Default panel contents

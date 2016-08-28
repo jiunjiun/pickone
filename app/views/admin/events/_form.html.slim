@@ -12,9 +12,9 @@
                 span.lbl= t('simple_form.labels.event.is_secret')
           .col-md-2
             .checkbox
-              == f.label :is_duplicate do
-                == f.check_box :is_duplicate, class: 'px'
-                span.lbl= t('simple_form.labels.event.is_duplicate')
+              == f.label :is_multi_select do
+                == f.check_box :is_multi_select, class: 'px'
+                span.lbl= t('simple_form.labels.event.is_multi_select')
         / == f.input :over_at, required: true
 
         - if event.errors[:items].present? or event.errors['items.name'].present?

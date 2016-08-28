@@ -3,7 +3,7 @@ FactoryGirl.define do
     title "MyString"
     desc "MyString"
     is_secret false
-    is_duplicate false
+    is_multi_select false
     over_at "2016-08-12"
   end
 end

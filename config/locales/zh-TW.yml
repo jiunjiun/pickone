@@ -38,6 +38,8 @@ zh-TW:
     back_page        : '上一頁'
     continue         : '繼續'
     refresh          : '更新'
+    about            : '關於'
+    vote             : '投票'
 
     successfully_created : '新增成功' # Your profile was successfully created.
     successfully_updated : '更新成功' # Your profile was successfully updated.
@@ -47,6 +49,7 @@ zh-TW:
     submit:
       create: "新增"
       update: "更新"
+      send: '送出'
 
   events:
     link: '投票連結'
@@ -77,10 +80,10 @@ zh-TW:
   simple_form:
     labels:
       event:
-        title:        '名稱'
-        desc:         '描述'
-        is_secret:    '記名'
-        is_duplicate: '複選'
+        title:           '名稱'
+        desc:            '描述'
+        is_secret:       '記名'
+        is_multi_select: '複選'
         item:         '投票項目'
         items:
           name:       '項目'
@@ -88,10 +91,10 @@ zh-TW:
 
     placeholders:
       event:
-        title:        '名稱'
-        desc:         '描述'
-        is_secret:    '記名'
-        is_duplicate: '重複選擇'
+        title:           '名稱'
+        desc:            '描述'
+        is_secret:       '記名'
+        is_multi_select: '複選'
         item:         '投票項目'
         items:
           name:       '項目'

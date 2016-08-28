@@ -16,12 +16,12 @@ ActiveRecord::Schema.define(version: 20160813052137) do
     t.string   "title"
     t.string   "desc"
     t.string   "code"
-    t.boolean  "is_secret",    default: false
-    t.boolean  "is_duplicate", default: false
+    t.boolean  "is_secret",       default: false
+    t.boolean  "is_multi_select", default: false
     t.date     "over_at"
     t.integer  "user_id"
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
     t.index ["user_id"], name: "index_events_on_user_id", using: :btree
   end
 
