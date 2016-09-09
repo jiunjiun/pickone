@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160813052137) do
+ActiveRecord::Schema.define(version: 20160909043857) do
+
+  create_table "event_voteds", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "event_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_event_voteds_on_event_id", using: :btree
+    t.index ["user_id"], name: "index_event_voteds_on_user_id", using: :btree
+  end
 
   create_table "events", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "title"
@@ -72,6 +81,8 @@ ActiveRecord::Schema.define(version: 20160813052137) do
     t.index ["user_id"], name: "index_votes_on_user_id", using: :btree
   end
 
+  add_foreign_key "event_voteds", "events"
+  add_foreign_key "event_voteds", "users"
   add_foreign_key "events", "users"
   add_foreign_key "identities", "users"
   add_foreign_key "items", "events"

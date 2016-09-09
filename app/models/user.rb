@@ -9,6 +9,7 @@ class User < ApplicationRecord
   has_one :identity
   has_many :events
   has_many :votes
+  has_many :event_voted
 
   TEMP_EMAIL_PREFIX = 'change@me'
   TEMP_EMAIL_REGEX = /\Achange@me/

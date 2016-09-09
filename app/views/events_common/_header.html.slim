@@ -1,0 +1,85 @@
+/! header-container start
+.header-container
+  .header-top.dark
+    .container
+      .row
+        .col-xs-3.col-sm-6.col-md-9
+        .col-xs-9.col-sm-6.col-md-3
+          /! header-top-second start
+          /! ================
+          #header-top-second.clearfix
+            /! header top dropdowns start
+            /! ================
+
+            .header-top-dropdown.text-right
+              .btn-group
+                - if user_signed_in?
+                  == link_to destroy_user_session_path, method: :delete, class: 'btn btn-default btn-sm' do
+                    i.fa.fa-user.pr-10
+                    = t('sign_out')
+                - else
+                  == link_to new_user_session_path, class: 'btn btn-default btn-sm' do
+                    i.fa.fa-user.pr-10
+                    = t('sign_in')
+            /! header top dropdowns end
+          /! header-top-second end
+
+  /! header-top end
+
+  /! header start
+  /! classes:
+  /! "fixed": enables fixed navigation mode (sticky menu) e.g. class="header fixed clearfix"
+  /! "dark": dark version of header e.g. class="header dark clearfix"
+  /! "full-width": mandatory class for the full-width menu layout
+  /! "centered": mandatory class for the centered logo layout
+  /! ================
+  header.header.fixed.clearfix
+    .container
+      .row
+        .col-md-9
+          /! header-left start
+          /! ================
+          .header-left.clearfix.title
+            /! logo
+            / #logo.logo
+            /   a href="index.html"
+            /     img#logo_img alt=("The Project") src="images/logo_light_blue.png" /
+            /! name-and-slogan
+            .site-slogan
+              h1= event.title
+            / h1= 1231232
+          /! header-left end
+        .col-md-3
+          /! header-right start
+          /! ================
+          .header-right.clearfix
+            /! main-navigation start
+            /! classes:
+            /! "onclick": Makes the dropdowns open on click, this the default bootstrap behavior e.g. class="main-navigation onclick"
+            /! "animated": Enables animations on dropdowns opening e.g. class="main-navigation animated"
+            /! "with-dropdown-buttons": Mandatory class that adds extra space, to the main navigation, for the search and cart dropdowns
+            /! ================
+            .main-navigation.animated
+              /! navbar start
+              /! ================
+              nav.navbar.navbar-default role="navigation"
+                .container-fluid
+                  /! Toggle get grouped for better mobile display
+                  .navbar-header
+                    button.navbar-toggle data-target="#navbar-collapse-1" data-toggle="collapse" type="button"
+                      span.sr-only Toggle navigation
+                      span.icon-bar
+                      span.icon-bar
+                      span.icon-bar
+                  /! Collect the nav links, forms, and other content for toggling
+                  #navbar-collapse-1.collapse.navbar-collapse.scrollspy.smooth-scroll
+                    ul.nav.navbar-nav.navbar-right
+                      li
+                        == link_to t('helpers.vote'), '#vote'
+                      li
+                        == link_to t('helpers.about'), '#about'
+              /! navbar end
+            /! main-navigation end
+          /! header-right end
+  /! header end
+/! header-container end

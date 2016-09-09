@@ -4,7 +4,7 @@
 # Examples:
 #
 # Create Event
-event = Event.create(
+event = Event.create!(
   user_id: 1, title: 'aaa', desc: 'desc',
   items_attributes: [
     {name: '谷哥店', link: 'https://www.google.com.tw/'},

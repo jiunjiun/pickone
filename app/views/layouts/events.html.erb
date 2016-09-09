@@ -3,7 +3,6 @@
 <!--[if !IE]><!-->
 <html lang="en">
   <!--<![endif]-->
-
 <head>
   <meta charset="utf-8">
   <title>Event</title>
@@ -23,10 +22,23 @@
   <link href='http://fonts.googleapis.com/css?family=PT+Serif' rel='stylesheet' type='text/css'>
 
   <%= stylesheet_link_tag 'events', media: 'all', 'data-turbolinks-track': 'reload' %>
-</head>
-<body>
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLFTRo7Saflr9H9WgalC3qJOzUHY9_r5Tq" frameborder="0" allowfullscreen></iframe>
 
+  <%= csrf_meta_tags %>
+</head>
+<body class="no-trans front-page transparent-header  ">
+  <!-- scrollToTop -->
+  <!-- ================ -->
+  <div class="scrollToTop circle"><i class="icon-up-open-big"></i></div>
+
+  <div class="page-wrapper">
+    <!-- header-container start -->
+    <%= render partial: 'events_common/header' %>
+    <!-- header-container end -->
+
+    <div id="page-start"></div>
+
+    <%= yield %>
+  </div>
 
 
   <!-- Get jQuery from Google CDN -->
