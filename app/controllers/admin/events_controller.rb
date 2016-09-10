@@ -7,6 +7,7 @@ class Admin::EventsController < AdminController
   end
 
   def show
+    gon.is_show = true
   end
 
   def new
