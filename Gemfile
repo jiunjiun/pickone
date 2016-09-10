@@ -93,6 +93,9 @@ gem "i18n-js", ">= 3.0.0.rc13"
 # form
 gem 'simple_form'
 
+# get your Rails variables in your js
+gem 'gon'
+
 # Style
 gem 'slim'
 gem 'slim-rails'
