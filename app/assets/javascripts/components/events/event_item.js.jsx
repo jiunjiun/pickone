@@ -1,9 +1,8 @@
 var EventItem = React.createClass({
   componentDidMount: function() {
-
   },
 
-  handleDeleteDealer: function( e ) {
+  handleDelete: function( e ) {
     e.preventDefault();
     this.props.onDelete(this.props.index);
   },
@@ -20,13 +19,13 @@ var EventItem = React.createClass({
       <div className="row">
         <input type="hidden" name={input_hidden} value={item_id} />
         <div className="col-md-1 text-center">
-          <button className="btn btn-xs btn-danger btn-delete" onClick={this.handleDeleteDealer}>{ I18n.t('helpers.delete') }</button>
+          <button className="btn btn-xs btn-danger btn-delete" onClick={this.handleDelete}>{ I18n.t('helpers.delete') }</button>
         </div>
         <div className="col-md-3">
-          <input type="text" name={item_field_name} onChange={this.handleChangeAmount} className="form-control form-group-margin" defaultValue={item_name} placeholder={I18n.t('simple_form.placeholders.event.items.name')} />
+          <input type="text" name={item_field_name} className="form-control form-group-margin" defaultValue={item_name} placeholder={I18n.t('simple_form.placeholders.event.items.name')} />
         </div>
         <div className="col-md-8">
-          <input type="url" name={item_field_link} onChange={this.handleChangeAmount} className="form-control form-group-margin" defaultValue={item_link} placeholder={I18n.t('simple_form.placeholders.event.items.link')} />
+          <input type="url" name={item_field_link} className="form-control form-group-margin" defaultValue={item_link} placeholder={I18n.t('simple_form.placeholders.event.items.link')} />
         </div>
       </div>
     );
