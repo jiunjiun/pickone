@@ -2,7 +2,7 @@ class Event < ApplicationRecord
   belongs_to :user
   has_many :items, inverse_of: :event, dependent: :destroy
   has_many :votes, through: :items
-  has_many :event_voted
+  has_many :event_voteds
 
   accepts_nested_attributes_for :items, allow_destroy: true
 
@@ -22,11 +22,11 @@ class Event < ApplicationRecord
   end
 
   def voted(user, params)
-    result = {success: false}
+    result = {success: true, message: I18n.t('votes.success')}
 
     user_id = user.present? ? user.id : 0
-    event_voted = self.event_voted.create(user_id: user_id)
-    result[:message] = I18n.t('errors.votes.event_voted') if event_voted
+    event_voted = self.event_voteds.build(user_id: user_id).save
+    return {success: false, message: I18n.t('votes.errors.event_voted')} unless event_voted
 
     if is_multi_select
       _items = params[:items]

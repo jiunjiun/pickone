@@ -77,9 +77,12 @@ zh-TW:
       ymds: '%Y-%m-%d %T'
       long: '%Y年%m月%d日 %T'
 
-  errors:
-    votes:
+  votes:
+    errors:
+      event_blank: '你還沒選擇哦!'
       event_voted: '你投過了哦!'
+    success: '完成投票!!'
+
 
   simple_form:
     labels:

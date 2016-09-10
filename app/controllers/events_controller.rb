@@ -5,15 +5,14 @@ class EventsController < ApplicationController
     # render json: event
   end
 
-  def voting
+  def voted
     result = {success: false}
     if (event.is_multi_select and params[:items].present?) or (!event.is_multi_select and params[:item].present?)
       vote_result = event.voted(current_user, params)
       result = vote_result
+    else
+      result = {success: false, message: I18n.t('votes.errors.event_blank')}
     end
     render json: result
-  end
-
-  def voted
   end
 end

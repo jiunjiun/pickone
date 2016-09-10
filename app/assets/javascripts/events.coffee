@@ -5,7 +5,6 @@
 #= require jquery_ujs
 #= require bootstrap
 
-
 # Modernizr javascript
 #= require TheProject/plugins/modernizr
 
@@ -49,3 +48,13 @@
 
 # Custom Scripts
 #= require TheProject/custom
+
+#= require noty
+
+$ ->
+  $('form#voted').on 'ajax:success', (e, data, status, xhr) ->
+    if data.success
+      notyMessage data.message
+    else
+      notyError data.message
+

@@ -9,7 +9,7 @@ section#vote.main-container
         .separator
         p.large.text-center= event.desc
     .row
-      == form_tag voting_event_path(params[:code])
+      == form_tag voted_event_path(params[:code]), remote: true, id: 'voted'
         - event.items.each do |item|
           .col-md-12.votes
             .pv-20.ph-20.feature-box-2.light-gray-bg.boxed.shadow

@@ -15,8 +15,7 @@ Rails.application.routes.draw do
   root 'home#index'
 
   get  'events/:code',        to: 'events#show',   as: :event
-  post 'events/:code/voting', to: 'events#voting', as: :voting_event
-  get  'events/:code/voted',  to: 'events#voted',  as: :voted_event
+  post 'events/:code/voted',  to: 'events#voted',  as: :voted_event
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
