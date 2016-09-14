@@ -3,28 +3,28 @@
  * You can use Sass (SCSS) here: http://sass-lang.com/
 
  Bootstrap core CSS
- *= require TheProject/bootstrap/css/bootstrap.css
+ *= require TheProject/bootstrap/css/bootstrap
 
  Fontello CSS
- *= require TheProject/fonts/fontello/css/fontello.css
+ *= require TheProject/fonts/fontello/css/fontello
 
  Plugins
- *= require TheProject/plugins/magnific-popup/magnific-popup.css
- *= require TheProject/plugins/rs-plugin/css/settings.css
- *= require TheProject/animations.css
- *= require TheProject/plugins/owl-carousel/owl.carousel.css
- *= require TheProject/plugins/owl-carousel/owl.transitions.css
- *= require TheProject/plugins/hover/hover-min.css
- *= require TheProject/plugins/morphext/morphext.css
+ *= require TheProject/plugins/magnific-popup/magnific-popup
+ *= require TheProject/plugins/rs-plugin/css/settings
+ *= require TheProject/animations
+ *= require TheProject/plugins/owl-carousel/owl.carousel
+ *= require TheProject/plugins/owl-carousel/owl.transitions
+ *= require TheProject/plugins/hover/hover-min
+ *= require TheProject/plugins/morphext/morphext
 
  The Project core CSS file
- *= require TheProject/style.css
+ *= require TheProject/style
 
  Color Scheme (In order to change the color scheme, replace the blue.css with the color scheme that you prefer)
- *= require TheProject/skins/light_blue.css
+ *= require TheProject/skins/light_blue
 
  Custom css
- *= require TheProject/custom.css
+ *= require TheProject/custom
  *
  */
 
