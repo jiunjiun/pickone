@@ -1,0 +1,52 @@
+/* Place all the styles related to the events controller here.
+ * They will automatically be included in application.css.
+ * You can use Sass (SCSS) here: http://sass-lang.com/
+
+ Bootstrap core CSS
+ *= require TheProject/bootstrap/css/bootstrap
+
+ Plugins
+ *= require TheProject/animations
+
+ The Project core CSS file
+ *= require TheProject/style
+ *
+ */
+
+@import 'font-awesome';
+@import "media-queries";
+
+
+.light-gray-bg .btn.btn-fb {
+  background-color: #3b5998;
+  color: #fff;
+
+  &:hover {
+    background-color: #4e69a2;
+    color: #fff;
+  }
+}
+
+.fullscreen-bg {
+  // background-image: image-url("login_bg/foodiesfeed.com_hip-bistro-interior");
+  background-image: image-url("login_bg/foodiesfeed.com_reservation-at-table");
+  // background-image: image-url("login_bg/fsh0816_pECgZCx-1");
+}
+
+.pv-40 {
+  padding-top : 15%;
+
+  @include max-screen(479px) {
+    padding-top : 35%;
+  }
+  @include screen(480px, 768px) {
+    padding-top : 25%;
+  }
+  @include min-screen(1024px) {
+    padding-top : 15%;
+  }
+}
+.dark-translucent-bg:after {
+  // background-color: rgba(0, 0, 0, 0.2);
+  background-color: transparent;
+}
