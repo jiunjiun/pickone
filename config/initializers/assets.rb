@@ -13,3 +13,8 @@ Rails.application.config.assets.version = '1.0'
 Rails.application.config.assets.precompile += %w( admin.css admin.js)
 Rails.application.config.assets.precompile += %w( events.css events.js)
 Rails.application.config.assets.precompile += %w( login.css login.js)
+
+Rails.application.config.assets.precompile += ["fontawesome-webfont.ttf",
+                                               "fontawesome-webfont.eot",
+                                               "fontawesome-webfont.svg",
+                                               "fontawesome-webfont.woff"]
