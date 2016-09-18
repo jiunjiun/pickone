@@ -5,7 +5,7 @@ var EventItems = React.createClass({
 
   handleAdd: function( e ) {
     e.preventDefault();
-    this.state.items.push({id: new Date().getTime()})
+    this.state.items.push({key: new Date().getTime()})
     this.setState({items: this.state.items});
   },
 
@@ -20,7 +20,7 @@ var EventItems = React.createClass({
   render: function() {
     var item = this.state.items.map(function(item, index) {
       console.log(index, item)
-      return <EventItem key={item.id} index={index} onDelete={this.handleDelete} item={item} />
+      return <EventItem key={item.key} index={index} onDelete={this.handleDelete} item={item} />
     }.bind(this));
 
     return (
