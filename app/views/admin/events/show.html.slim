@@ -61,7 +61,7 @@
                 | &nbsp;&nbsp;&nbsp;
               = item.votes.count
             td= item.name
-            td= link_to item.link, item.link
+            td= link_to truncate(item.link, length: 38), item.link
 
 .panel
   .panel-heading
