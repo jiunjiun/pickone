@@ -1,5 +1,6 @@
 var EventItems = React.createClass({
   getInitialState: function() {
+    console.log(this.props.items)
     return {items: this.props.items};
   },
 
@@ -24,16 +25,19 @@ var EventItems = React.createClass({
     }.bind(this));
 
     return (
-      <div className="panel colourable">
-        <div className="panel-heading">
-          <span className="panel-title">{ I18n.t('simple_form.labels.event.item') }</span>
-          <div className="panel-heading-controls">
+      <div className="card hoverable">
+        <div className="card-content">
+          <div className="card-options right">
             <button className="btn btn-xs btn-success" onClick={this.handleAdd}>{ I18n.t('helpers.add') }</button>
           </div>
-        </div>
-        {this.validation()}
-        <div className="panel-body">
-          {item}
+          <span className="card-title">{ I18n.t('simple_form.labels.event.item') }</span>
+          <table className="responsive-table">
+            <thead>
+            </thead>
+            <tbody>
+              {item}
+            </tbody>
+          </table>
         </div>
       </div>
     );

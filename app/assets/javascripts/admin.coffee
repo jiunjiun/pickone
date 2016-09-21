@@ -1,7 +1,5 @@
 #= require jquery_ujs
-
-#= require bootstrap
-#= require PixelAdmin/pixel-admin.min
+#= require materialize-sprockets
 
 #= require react
 #= require react_ujs
@@ -17,11 +15,8 @@
 #= require_tree ./admin
 #= require_self
 
+
 $ ->
-  # $('.dropdown-toggle').dropdown()
-
-  init.push ->
-    # $(".input_file_upload").pixelFileInput placeholder: "No file selected..."
-    $('[data-toggle="tooltip"]').tooltip()
-
-  window.PixelAdmin.start init
+  $(".button-collapse").sideNav()
+  $(".dropdown-button").dropdown()
+  $('.tooltipped').tooltip({delay: 50})

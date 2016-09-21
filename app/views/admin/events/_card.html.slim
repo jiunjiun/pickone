@@ -1,0 +1,12 @@
+.col.s4
+  .card.hoverable
+    .card-content
+      span.card-title.activator.grey-text.text-darken-4
+        = event.title
+    .card-action.center
+      = link_to admin_event_path(event), data: {position: 'top', tooltip: t('helpers.show')}, class: 'btn waves-effect waves-light blue lighten-1 tooltipped' do
+        i.fa.fa-search
+      = link_to edit_admin_event_path(event), data: {position: 'top', tooltip: t('helpers.edit')}, class: 'btn waves-effect waves-light green lighten-1 tooltipped' do
+        i.fa.fa-pencil
+      = link_to admin_event_path(event), data: {position: 'top', tooltip: t('helpers.delete'), confirm: t('helpers.are_you_sure')}, method: :delete, class: 'btn waves-effect waves-light red lighten-1 tooltipped' do
+        i.fa.fa-times

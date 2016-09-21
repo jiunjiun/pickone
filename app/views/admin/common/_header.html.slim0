@@ -1,0 +1,38 @@
+#main-navbar.navbar.navbar-inverse role="navigation"
+  /!
+    | Main menu toggle
+  button#main-menu-toggle type="button"
+    i.navbar-icon.fa.fa-bars.icon
+    span.hide-menu-text HIDE MENU
+  .navbar-inner
+    /!
+      | Main navbar header
+    .navbar-header
+      /!
+        | Logo
+      a.navbar-brand href= admin_root_path
+        = t('backend')
+      /!
+        | Main navbar toggle
+      button.navbar-toggle.collapsed data-target="#main-navbar-collapse" data-toggle="collapse" type="button"
+        i.navbar-icon.fa.fa-bars
+    /!
+      | \/ .navbar-header
+    #main-navbar-collapse.collapse.navbar-collapse.main-navbar-collapse
+      ul.nav.navbar-nav
+        li
+          = link_to t('backend'), admin_root_path
+      .right.clearfix
+        ul.nav.navbar-nav.pull-right.right-navbar-nav
+          li
+            = link_to t('back_fontend'), root_path
+          li.dropdown
+            a.dropdown-toggle.user-menu data-toggle="dropdown" href="#"
+              span
+              i.fa.fa-caret-down
+            ul.dropdown-menu
+              li.divider
+              li
+                = link_to destroy_user_session_path, method: :delete do
+                  i.fa.fa-power-off.fa-fw
+                  = t('sign_out')

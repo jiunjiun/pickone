@@ -1,32 +1,32 @@
 #event_form
-  .panel.colourable
-    .panel-body
-      == simple_form_for([:admin, event]) do |f|
-        == f.input :title, required: true
-        == f.input :desc
-        .form-group
-          .col-md-2
-            .checkbox
-              == f.label :is_secret do
-                == f.check_box :is_secret, class: 'px'
-                span.lbl= t('simple_form.labels.event.is_secret')
-          .col-md-2
-            .checkbox
-              == f.label :is_multi_select do
-                == f.check_box :is_multi_select, class: 'px'
-                span.lbl= t('simple_form.labels.event.is_multi_select')
-        / == f.input :over_at, required: true
+  .row
+    == simple_form_for([:admin, event]) do |f|
 
+      .input-field.col.s12
+        == f.text_field :title
+        == f.label :title, t('simple_form.labels.event.title')
+        == event_error_msg_by(:title)
+      .input-field.col.s12
+        == f.text_field :desc
+        == f.label :desc, t('simple_form.labels.event.desc')
+        == event_error_msg_by(:desc)
+      .input-field.col.s12
+        .col.s2
+          == f.check_box :is_secret
+          == f.label :is_secret, t('simple_form.labels.event.is_secret')
+        .col.s2
+          == f.check_box :is_multi_select
+          == f.label :is_multi_select, t('simple_form.labels.event.is_multi_select')
+      .input-field.col.s12
+        br/
+        == react_component('EventItems', items: items)
         - if event.errors[:items].present? or event.errors['items.name'].present?
-          .note.note-danger
+          blockquote
             = t('simple_form.labels.event.item')
             | :&nbsp;
             = event.errors[:items].first || event.errors['items.name'].first
-        == react_component('EventItems', items: items)
 
-        br/
-        .row
-          .col-md-12
-            == f.button :submit, class: 'btn-success btn-flat'
-            | &nbsp;&nbsp;
-            == link_to t('helpers.back'), admin_events_path, class: 'btn btn-default btn-flat'
+      .input-field.col.s12
+        == f.button :submit, class: 'btn'
+        | &nbsp;&nbsp;
+        == link_to t('helpers.back'), admin_events_path, class: 'btn btn-flat'

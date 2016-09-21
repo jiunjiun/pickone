@@ -16,18 +16,17 @@ var EventItem = React.createClass({
     var item_field_link = 'event[items_attributes]['+ this.props.index +'][link]';
 
     return (
-      <div className="row">
-        <input type="hidden" name={input_hidden} value={item_id} />
-        <div className="col-md-1 text-center">
+      <tr>
+        <td className="center">
           <button className="btn btn-xs btn-danger btn-delete" onClick={this.handleDelete}>{ I18n.t('helpers.delete') }</button>
-        </div>
-        <div className="col-md-3">
+        </td>
+        <td>
           <input type="text" name={item_field_name} className="form-control form-group-margin" defaultValue={item_name} placeholder={I18n.t('simple_form.placeholders.event.items.name')} />
-        </div>
-        <div className="col-md-8">
+        </td>
+        <td>
           <input type="url" name={item_field_link} className="form-control form-group-margin" defaultValue={item_link} placeholder={I18n.t('simple_form.placeholders.event.items.link')} />
-        </div>
-      </div>
+        </td>
+      </tr>
     );
   }
 });

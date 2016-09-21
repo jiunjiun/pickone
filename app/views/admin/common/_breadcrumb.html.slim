@@ -1,26 +1,25 @@
-ul.breadcrumb.breadcrumb-page
-  .breadcrumb-label.text-light-gray
-    = t('helpers.you_are_here')
-  li
-    == link_to admin_root_path do
-      = t('backend')
-  - sublinks.each_with_index do |sublink, index|
-    li class="#{ (sublinks.size-1) == index ? 'active' : ''}"
-      - if sublink[:path].blank?
-        = sublink[:title]
-      - else
-        == link_to sublink[:title], sublink[:path]
-.page-header
-  .pull-left
-    - if subtitle.blank?
-      .text-lg
-        = sublinks.first[:title]
-    - else
-      h1
-        span.text-light-gray
-          = sublinks.last[:title]
-          | &nbsp;/&nbsp;
-        = subtitle
-  - if right_subtitle.present?
-    .pull-right
-      = link_to right_subtitle[:title], right_subtitle[:link], class: 'btn btn-primary btn-flat'
+/ ul.breadcrumb.breadcrumb-page
+/   .breadcrumb-label.text-light-gray
+/     = t('helpers.you_are_here')
+/   li
+/     == link_to admin_root_path do
+/       = t('backend')
+/   - sublinks.each_with_index do |sublink, index|
+/     li class="#{ (sublinks.size-1) == index ? 'active' : ''}"
+/       - if sublink[:path].blank?
+/         = sublink[:title]
+/       - else
+/         == link_to sublink[:title], sublink[:path]
+.row
+  - if subtitle.blank?
+    .text-lg
+      = sublinks.first[:title]
+  - else
+    / h2.blue-grey-text.text-lighten-1
+    /   span.blue-grey-text.text-lighten-3
+    /     = sublinks.last[:title]
+    /     | &nbsp;/&nbsp;
+    /   = subtitle
+- if right_subtitle.present?
+  .pull-right
+    = link_to right_subtitle[:title], right_subtitle[:link], class: 'btn btn-primary btn-flat'

@@ -1,29 +1,14 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
- *
- *= require PixelAdmin/bootstrap.min
- *= require PixelAdmin/pixel-admin.min
- *= require PixelAdmin/widgets.min
- *= require PixelAdmin/rtl.min
- *= require PixelAdmin/themes.min
- *
- */
-
+@import "materialize"
 @import 'font-awesome'
 
-#event_form .panel .panel-body .btn-delete
-  margin-top: 5px
 
-.fa-star
-  color: #FFC400
-  margin-left: -24px
+nav ul a, nav .brand-logo
+  @extend .blue-grey-text
+
+#event_index
+  .card-action a
+    margin-left: 10px
+
+#event_form
+  td, th
+    padding: 5px 5px
