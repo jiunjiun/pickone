@@ -99,6 +99,7 @@ gem 'gon'
 # Style
 gem 'slim'
 gem 'slim-rails'
+gem 'materialize-sass'
 gem 'bootstrap-sass'
 gem 'font-awesome-rails'
 gem 'noty-rails'
