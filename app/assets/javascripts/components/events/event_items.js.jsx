@@ -11,7 +11,8 @@ var EventItems = React.createClass({
   },
 
   handleDelete: function( index ) {
-    this.state.items.splice(index, 1);
+    this.state.items[index].destroy = this.state.items[index].id;
+    // this.state.items.splice(index, 1);
     this.replaceState({items: this.state.items});
   },
 
