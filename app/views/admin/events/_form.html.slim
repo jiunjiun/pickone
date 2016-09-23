@@ -11,10 +11,10 @@
         == f.label :desc, t('simple_form.labels.event.desc')
         == event_error_msg_by(:desc)
       .input-field.col.s12
-        .col.s2
+        .col.l2.m2.s6
           == f.check_box :is_secret
           == f.label :is_secret, t('simple_form.labels.event.is_secret')
-        .col.s2
+        .col.l2.m2.s6
           == f.check_box :is_multi_select
           == f.label :is_multi_select, t('simple_form.labels.event.is_multi_select')
       .input-field.col.s12

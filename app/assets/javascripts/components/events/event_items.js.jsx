@@ -32,7 +32,7 @@ var EventItems = React.createClass({
             <button className="btn btn-xs btn-success" onClick={this.handleAdd}>{ I18n.t('helpers.add') }</button>
           </div>
           <span className="card-title">{ I18n.t('simple_form.labels.event.item') }</span>
-          <table className="responsive-table">
+          <table className="striped">
             <thead>
             </thead>
             <tbody>
