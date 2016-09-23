@@ -1,0 +1,73 @@
+== render partial: 'admin/common/breadcrumb', locals: {subtitle: event.title, sublinks: [{title: t('event')}], right_subtitle: {title: t('helpers.edit'), link: edit_admin_event_path(event)}}
+
+/ evnet link
+.panel.colourable
+  .panel-heading
+    span.panel-title
+      i.panel-title-icon.fa.fa-link aria-hidden="true"
+      = t('events.link')
+  .panel-body
+    .input-group
+      = text_field_tag :code, event_url(event.code), class: 'form-control', id: 'event_link'
+      span.input-group-btn
+        button.btn.btn-clipboard type="button" data-clipboard-target="#event_link" data-original-title=t('events.clipboard') data-placement="top" data-toggle="tooltip"
+          i.fa.fa-clipboard aria-hidden="true"
+
+/ event role
+- if has_role?
+  #accordion.panel-group
+    .panel
+      .panel-heading
+        a.accordion-toggle.collapsed data-parent="#accordion" data-toggle="collapse" href="#event_role"
+          = t('events.role')
+      /! / .panel-heading
+      #event_role.panel-collapse.collapse
+        .panel-body
+          ul.list-group
+            - if event.is_secret
+              li.list-group-item
+                i.fa.fa-check aria-hidden="true"
+                | &nbsp;
+                = t('simple_form.labels.event.is_secret')
+            - if event.is_multi_select
+              li.list-group-item
+                i.fa.fa-check aria-hidden="true"
+                | &nbsp;
+                = t('simple_form.labels.event.is_multi_select')
+
+.panel.colourable
+  /! Default panel contents
+  .panel-heading
+    span.panel-title= t('events.items')
+    / .panel-heading-controls
+    /   button.btn.btn-xs.btn-success.btn-outline
+    /     span.fa.fa-refresh
+    /     | &nbsp;&nbsp;
+    /     = t('helpers.refresh')
+  .panel-body
+    /! Table
+    table.table
+      thead
+        tr
+          th.text-center= t('events.count')
+          th.text-center= t('events.item')
+          th.text-center= t('events.link')
+      tbody
+        - items.each do |item|
+          tr.text-center
+            td
+              - if event.top_item == item.id
+                i.fa.fa-star aria-hidden="true"
+                | &nbsp;&nbsp;&nbsp;
+              = item.votes.count
+            td= item.name
+            td= link_to truncate(item.link, length: 38), item.link
+
+.panel
+  .panel-heading
+    span.panel-title= t('events.chart')
+  .panel-body
+    .graph-container
+      canvas#myChart
+
+script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.1/Chart.min.js"

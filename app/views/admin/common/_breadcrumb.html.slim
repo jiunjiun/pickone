@@ -10,16 +10,20 @@
 /         = sublink[:title]
 /       - else
 /         == link_to sublink[:title], sublink[:path]
-.row
-  - if subtitle.blank?
-    .text-lg
-      = sublinks.first[:title]
-  - else
-    / h2.blue-grey-text.text-lighten-1
-    /   span.blue-grey-text.text-lighten-3
-    /     = sublinks.last[:title]
-    /     | &nbsp;/&nbsp;
-    /   = subtitle
-- if right_subtitle.present?
-  .pull-right
-    = link_to right_subtitle[:title], right_subtitle[:link], class: 'btn btn-primary btn-flat'
+.row.breadcrumb
+  .col.s10
+    - if subtitle.blank?
+      .text-lg
+        = sublinks.first[:title]
+    - else
+      h4.blue-grey-text.text-lighten-1
+        span.blue-grey-text.text-lighten-3
+          = sublinks.last[:title]
+          | &nbsp;/&nbsp;
+        = subtitle
+  - if right_subtitle.present?
+    .col.s2
+      = link_to right_subtitle[:back], class: 'waves-effect waves-light btn-flat tooltipped', data: {position: 'top', tooltip: t('helpers.back')} do
+        i.fa.fa-reply aria-hidden="true"
+      = link_to right_subtitle[:link], class: 'waves-effect waves-light btn tooltipped', data: {position: 'top', tooltip: right_subtitle[:title]} do
+        i.fa.fa-pencil aria-hidden="true"

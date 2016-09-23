@@ -42,7 +42,7 @@ class Admin::EventsController < AdminController
   def event_params
     params.require(:event).permit(
       :title, :desc, :is_secret, :is_multi_select,
-      items_attributes: [:id, :name, :link]
+      items_attributes: [:id, :name, :link, :_destroy]
     )
   end
 end
