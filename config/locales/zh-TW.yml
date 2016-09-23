@@ -63,6 +63,7 @@ zh-TW:
     link: '連結'
     chart: '圖表'
     go: 'go'
+    top3: '前三名'
 
   activerecord:
     errors:

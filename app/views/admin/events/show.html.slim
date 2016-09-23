@@ -6,9 +6,9 @@
       label for="event_link"= t('events.link')
     .input-field.col.s2.options
       a.waves-effect.waves-light.btn.btn-clipboard.tooltipped data-position="top" data-tooltip=t('events.clipboard') data-clipboard-target="#event_link"
-        i.fa.fa-clipboard aria-hidden="true"
+        i.fa.fa-clipboard
       = link_to event_url(event.code), class: 'waves-effect waves-light btn tooltipped', target: '_blank', data: {position: 'top', tooltip: t('events.go')}
-        i.fa.fa-send aria-hidden="true"
+        i.fa.fa-send
   / event role
   - if has_role?
     .row
@@ -47,7 +47,7 @@
                 tr
                   td
                     - if event.top_item == item.id
-                      i.fa.fa-star aria-hidden="true"
+                      i.fa.fa-star
                       | &nbsp;&nbsp;&nbsp;
                     = item.votes.count
                   td= item.name

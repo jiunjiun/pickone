@@ -17,8 +17,24 @@ class Event < ApplicationRecord
     vote_sort.keys.first
   end
 
-  def vote_sort
-    votes.group(:item_id).order('count_id desc').count(:id)
+  def vote_sort(limit = nil)
+    if limit
+      votes.group(:item_id).order('count_id desc').limit(limit).count(:id)
+    else
+      votes.group(:item_id).order('count_id desc').count(:id)
+    end
+  end
+
+  def top_votes(top)
+    vote_sort_result = vote_sort(top)
+    vote_ids         = vote_sort_result.keys.sort.reverse
+    votes_by_item    = votes.includes(:item)
+
+    resource = votes.includes(:item).where(id: vote_ids).map do |vote|
+      {name: vote.item.name, count: vote_sort_result[vote.item.id]}
+    end
+
+    resource.sort_by {|v| -v[:count]}
   end
 
   def voted(user, params)
