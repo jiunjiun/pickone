@@ -83,6 +83,7 @@ zh-TW:
   votes:
     errors:
       event_blank: '你還沒選擇哦!'
+      event_need_singin: '請先登入哦!'
       event_voted: '你投過了哦!'
     success: '完成投票!!'
 

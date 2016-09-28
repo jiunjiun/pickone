@@ -7,7 +7,10 @@ class EventsController < ApplicationController
 
   def voted
     result = {success: false}
-    if (event.is_multi_select and params[:items].present?) or (!event.is_multi_select and params[:item].present?)
+
+    if event.is_secret and !user_signed_in?
+      result = {success: false, message: I18n.t('votes.errors.event_need_singin')}
+    elsif (event.is_multi_select and params[:items].present?) or (!event.is_multi_select and params[:item].present?)
       vote_result = event.voted(current_user, params)
       result = vote_result
     else
