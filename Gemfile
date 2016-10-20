@@ -106,3 +106,8 @@ gem 'noty-rails'
 gem 'sweetalert2'
 gem 'react-rails'
 gem 'clipboard-rails'
+
+gem "lograge"
+gem 'logstash-logger'
+gem "logstash-event"
+
